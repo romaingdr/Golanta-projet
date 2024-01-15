@@ -21,16 +21,24 @@ h1 {
     color: #fff;
 }
 
-a {
+a.button {
     font-family: 'kohlanta', sans-serif;
     color: #fff;
     text-decoration: none;
-    padding: 10px;
+    padding: 40px 80px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin: 5px;
+    font-size: 40px;
+    display: inline-block;
 }
 
-a:hover {
+a.button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+

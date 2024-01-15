@@ -6,8 +6,13 @@
     <link rel="stylesheet" type="text/css" href="/static/css/create.css">
 </head>
 <body>
-<a href="/accueil">Retour</a>
-<h1>Créer un aventurier</h1>
+<div class="top">
+    <a href="/accueil" class="bouton-retour">
+        <img src="/static/images/retour.png" alt="Retour" />
+    </a>
+
+    <h1>Ajouter un aventurier</h1>
+</div>
 <form action="/submit_create" method="post">
     <label for="nom">Nom :</label>
     <input type="text" id="nom" name="nom" required>

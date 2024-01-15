@@ -69,9 +69,14 @@ h1 {
 }
 
 .details p:first-child {
+    font-size: 30px;
     font-family: 'kohlanta', sans-serif;
 }
 
 .details p:last-child {
     color: black;
+}
+
+.link-no-underline {
+    text-decoration: none;
 }

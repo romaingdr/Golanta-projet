@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/aventurier.css">
 </head>
 <body>
-<a href="/aventuriers">Retour</a>
-<h1>Aventurier</h1>
+<div class="top">
+    <a href="/aventuriers" class="bouton-retour">
+        <img src="/static/images/retour.png" alt="Retour" />
+    </a>
 
-<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-    <p>ID: {{.ID}}</p>
-    <p>Nom: {{.Nom}}</p>
-    <p>Prenom: {{.Prenom}}</p>
+    <h1>{{.Nom}} {{.Prenom}}</h1>
+</div>
+
+<div class="infobox">
     <p>Surnom: {{.Surnom}}</p>
     <p>Age: {{.Age}}</p>
     <p>Equipe: {{.Tribu}}</p>
     <p>Sexe: {{.Sexe}}</p>
-    <p>Force: {{.Force}}</p>
-    <p>Intelligence: {{.Intelligence}}</p>
-    <p>Strategie: {{.Strategie}}</p>
+    <p>Force: {{.Force}} /10</p>
+    <p>Intelligence: {{.Intelligence}}/10</p>
+    <p>Strategie: {{.Strategie}}/10</p>
     <p>Description: {{.Description}}</p>
 </div>
 

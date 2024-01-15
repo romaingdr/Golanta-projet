@@ -3,6 +3,17 @@
     src: url('/static/font/SF Ironsides.ttf') format('truetype')
 }
 
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.bouton-retour img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
 body {
     background-image: url('/static/images/background.png');
     font-family: 'Arial', sans-serif;
@@ -22,9 +33,9 @@ h1 {
     font-family: 'kohlanta', sans-serif;
     color: #fff;
 }
-
 form {
-    background: white;
+    backdrop-filter: blur(10px); /* Applique un flou au fond */
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond semi-transparente */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
