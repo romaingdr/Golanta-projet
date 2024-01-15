@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Créer personnage</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/create.css">
 </head>
 <body>
 <a href="/accueil">Retour</a>
@@ -22,10 +23,17 @@
 
 
     <label for="sexe">Sexe :</label>
-    <input type="text" id="sexe" name="sexe" required>
+    <select id="sexe" name="sexe" required>
+        <option value="homme">Homme</option>
+        <option value="femme">Femme</option>
+    </select>
 
-    <label for="tribu">Tribu d'origine :</label>
-    <input type="text" id="tribu" name="tribu">
+    <label for="tribu">Equipe :</label>
+    <select id="tribu" name="tribu" required>
+        <option value="Rouge">Rouge</option>
+        <option value="Jaune">Jaune</option>
+        <option value="Bleu">Bleu</option>
+    </select>
 
     <label for="force">Force physique (sur 10) :</label>
     <input type="number" id="force" name="force" min="0" max="10">

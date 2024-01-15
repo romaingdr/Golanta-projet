@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'kohlanta';
+    src: url('/static/font/SF Ironsides.ttf') format('truetype')
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: -30px;
+    text-align: center;
+    font-size: 120px;
+    font-family: 'kohlanta', sans-serif;
+    color: #fff;
+}
+
+a {
+    font-family: 'kohlanta', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'kohlanta';
+    src: url('/static/font/SF Ironsides.ttf') format('truetype');
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
+.bouton-retour img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-position: center;
+    line-height: 1.6;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'kohlanta', sans-serif;
+    color: #fff;
+}
+
+.container {
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Applique un flou */
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond semi-transparente */
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto; /* Active le défilement si nécessaire */
+    max-height: 80vh; /* Hauteur maximale pour déclencher le défilement */
+}
+.avatar {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+}
+
+.details {
+    flex: 1;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link img {
+    width: 120px;
+    height: 120px;
+}
+
+.details p:first-child {
+    font-family: 'kohlanta', sans-serif;
+}
+
+.details p:last-child {
+    color: black;
+}

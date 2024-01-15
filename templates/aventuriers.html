@@ -3,19 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/aventuriers.css">
 </head>
 <body>
+
+<div class="top">
+<a href="/accueil" class="bouton-retour">
+    <img src="/static/images/retour.png" alt="Retour" />
+</a>
+
 <h1>Liste des aventuriers</h1>
+</div>
 
 {{range .Aventuriers}}
-<a href="/aventurier?id={{.ID}}">
-<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-    <p>{{.Nom}} "{{.Surnom}}" {{.Prenom}}, {{.Age}}</p>
-    <p>Tribu: {{.Tribu}}</p>
-    <p>Sexe: {{.Sexe}}</p>
+<div class="container">
+    <div class="test">
+        {{if eq .Sexe "homme"}}
+        {{if eq .Tribu "Rouge"}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/homme_rouge.png" alt="Homme de la tribu Rouge" />
+        </div>
+        {{else if eq .Tribu "Jaune"}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/homme_jaune.png" alt="Homme de la tribu Jaune" />
+        </div>
+        {{else}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/homme_bleu.png" alt="Homme d'une autre tribu" />
+        </div>
+        {{end}}
+        {{else if eq .Sexe "femme"}}
+        {{if eq .Tribu "Rouge"}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/fille_rouge.png" alt="Femme de la tribu Rouge" />
+        </div>
+        {{else if eq .Tribu "Jaune"}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/fille_jaune.png" alt="Femme de la tribu Jaune" />
+        </div>
+        {{else}}
+        <div class="avatar">
+            <img href="/aventurier?id={{.ID}}" src="/static/images/fille_bleu.png" alt="Femme d'une autre tribu" />
+        </div>
+        {{end}}
+        {{end}}
+
+    </div>
+    <div class="details">
+        <p>{{.Nom}} "{{.Surnom}}" {{.Prenom}}, {{.Age}}</p>
+        <p>Equipe: {{.Tribu}}</p>
+    </div>
+    <a class="link" href="/delete?id={{.ID}}">
+        <img src="/static/images/poubelle.png" alt="Supprimer" />
+    </a>
 </div>
-</a>
 {{end}}
+
 
 </body>
 </html>

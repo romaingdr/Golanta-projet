@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 )
 
@@ -110,4 +111,32 @@ func AventurierPage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	templates.Temp.ExecuteTemplate(w, "aventurier", aventurierRecherche)
+}
+
+func DeletePage(w http.ResponseWriter, r *http.Request) {
+	jsonData, _ := ioutil.ReadFile("aventuriers.json")
+	queryParams := r.URL.Query()
+
+	idParam := queryParams.Get("id")
+
+	idToDelete, _ := strconv.Atoi(idParam)
+
+	type AventuriersData struct {
+		Aventuriers []backend.Aventurier `json:"aventuriers"`
+	}
+
+	var aventurierData AventuriersData
+	json.Unmarshal(jsonData, &aventurierData)
+
+	if backend.SupprimerAventurierParID(idToDelete, &aventurierData.Aventuriers) {
+
+		jsonUpdated, _ := json.MarshalIndent(aventurierData, "", "  ")
+
+		ioutil.WriteFile("aventuriers.json", jsonUpdated, os.ModePerm)
+
+		http.Redirect(w, r, "/aventuriers", http.StatusSeeOther)
+	} else {
+		fmt.Printf("Aventurier avec ID %d non trouvé.\n", idToDelete)
+	}
+
 }
