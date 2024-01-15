@@ -1,0 +1,43 @@
+{
+  "aventuriers": [
+    {
+      "id": 6497,
+      "nom": "Goudergues",
+      "prenom": "Romain",
+      "surnom": "Le fdp",
+      "age": 34,
+      "tribu": "Baka",
+      "sexe": "Femme",
+      "force": 10,
+      "intelligence": 10,
+      "strategie": 9,
+      "description": "ceci est une description de moi"
+    },
+    {
+      "id": 2809,
+      "nom": "test",
+      "prenom": "test",
+      "surnom": "test",
+      "age": 12,
+      "tribu": "test",
+      "sexe": "femme",
+      "force": 10,
+      "intelligence": 10,
+      "strategie": 10,
+      "description": "yulan le bg"
+    },
+    {
+      "id": 9041,
+      "nom": "tes",
+      "prenom": "test",
+      "surnom": "test",
+      "age": 10,
+      "tribu": "test",
+      "sexe": "homme",
+      "force": 2,
+      "intelligence": 2,
+      "strategie": 2,
+      "description": "test description"
+    }
+  ]
+}

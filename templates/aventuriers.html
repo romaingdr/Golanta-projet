@@ -1,0 +1,22 @@
+{{define "aventuriers"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aventuriers</title>
+</head>
+<body>
+<h1>Liste des aventuriers</h1>
+
+{{range .Aventuriers}}
+<a href="/aventurier?id={{.ID}}">
+<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+    <p>{{.Nom}} "{{.Surnom}}" {{.Prenom}}, {{.Age}}</p>
+    <p>Tribu: {{.Tribu}}</p>
+    <p>Sexe: {{.Sexe}}</p>
+</div>
+</a>
+{{end}}
+
+</body>
+</html>
+{{end}}

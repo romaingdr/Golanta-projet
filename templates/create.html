@@ -1,0 +1,46 @@
+{{define "create"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer personnage</title>
+</head>
+<body>
+<a href="/accueil">Retour</a>
+<h1>Créer un aventurier</h1>
+<form action="/submit_create" method="post">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+
+    <label for="surnom">Surnom :</label>
+    <input type="text" id="surnom" name="surnom">
+
+    <label for="age">Âge :</label>
+    <input type="number" id="age" name="age" required>
+
+
+    <label for="sexe">Sexe :</label>
+    <input type="text" id="sexe" name="sexe" required>
+
+    <label for="tribu">Tribu d'origine :</label>
+    <input type="text" id="tribu" name="tribu">
+
+    <label for="force">Force physique (sur 10) :</label>
+    <input type="number" id="force" name="force" min="0" max="10">
+
+    <label for="intelligence">Intelligence (sur 10) :</label>
+    <input type="number" id="intelligence" name="intelligence" min="0" max="10">
+
+    <label for="strategie">Stratégie (sur 10) :</label>
+    <input type="number" id="strategie" name="strategie" min="0" max="10">
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+
+    <button type="submit">Ajouter Aventurier</button>
+</form>
+</body>
+</html>
+{{end}}

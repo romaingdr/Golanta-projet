@@ -13,6 +13,11 @@ func Initserv() {
 	http.Handle("/static/", http.StripPrefix("/static/", css))
 
 	http.HandleFunc("/accueil", controller.AccueilPage)
+	http.HandleFunc("/create", controller.CreatePage)
+	http.HandleFunc("/submit_create", controller.SubmitCreate)
+	http.HandleFunc("/success_create", controller.SuccessCreate)
+	http.HandleFunc("/aventuriers", controller.AventuriersPage)
+	http.HandleFunc("/aventurier", controller.AventurierPage)
 
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
