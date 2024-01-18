@@ -1,30 +1,43 @@
 {
   "aventuriers": [
     {
-      "id": 5638,
-      "nom": "Goudergues",
-      "prenom": "Romain",
-      "surnom": "rom's",
-      "age": 17,
+      "id": 4054,
+      "nom": "Equipier",
+      "prenom": "Rouge",
+      "surnom": "TEST",
+      "age": 20,
       "tribu": "Rouge",
       "sexe": "homme",
       "force": 10,
       "intelligence": 10,
       "strategie": 10,
-      "description": "Description"
+      "description": "Test équipier rouge"
     },
     {
-      "id": 4009,
-      "nom": "Mousnier",
-      "prenom": "Thierry",
-      "surnom": "mousmous",
+      "id": 3150,
+      "nom": "Equipier",
+      "prenom": "Jaune",
+      "surnom": "TEST",
+      "age": 20,
+      "tribu": "Jaune",
+      "sexe": "homme",
+      "force": 10,
+      "intelligence": 10,
+      "strategie": 10,
+      "description": "Equipier jaune"
+    },
+    {
+      "id": 8018,
+      "nom": "Equipier",
+      "prenom": "Bleu",
+      "surnom": "TEST",
       "age": 20,
       "tribu": "Bleu",
       "sexe": "homme",
       "force": 10,
       "intelligence": 10,
       "strategie": 10,
-      "description": "Thierry est un giga bg qui va rouler sur le jeu de golanta"
+      "description": "Test equipier bleu"
     }
   ]
 }

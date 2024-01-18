@@ -140,3 +140,80 @@ func DeletePage(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+func EquipesPage(w http.ResponseWriter, r *http.Request) {
+	templates.Temp.ExecuteTemplate(w, "equipes", nil)
+}
+
+func EquipePage(w http.ResponseWriter, r *http.Request) {
+	queryParams := r.URL.Query()
+	idParam := queryParams.Get("id")
+
+	var aventuriers []backend.Aventurier
+	aventuriers, _ = backend.ChargerAventuriersParEquipe("aventuriers.json", idParam)
+	templates.Temp.ExecuteTemplate(w, "equipe", aventuriers)
+}
+
+func EditPage(w http.ResponseWriter, r *http.Request) {
+	var aventurierData backend.AventuriersData
+	queryParams := r.URL.Query()
+
+	idParam := queryParams.Get("id")
+
+	id, _ := strconv.Atoi(idParam)
+
+	jsonData, _ := ioutil.ReadFile("aventuriers.json")
+
+	json.Unmarshal(jsonData, &aventurierData)
+
+	var aventurierRecherche backend.Aventurier
+	for _, aventurier := range aventurierData.Aventuriers {
+		if aventurier.ID == id {
+			aventurierRecherche = aventurier
+			break
+		}
+	}
+
+	if aventurierRecherche.ID == 0 {
+		fmt.Println("Aventurier non trouvé avec l'ID:", id)
+		http.Error(w, "Aventurier non trouvé", http.StatusNotFound)
+		return
+	}
+
+	templates.Temp.ExecuteTemplate(w, "edit", aventurierRecherche)
+}
+
+func SubmitEdit(w http.ResponseWriter, r *http.Request) {
+	idStr := r.PostFormValue("id")
+	id, _ := strconv.Atoi(idStr)
+
+	data, _ := ioutil.ReadFile("aventuriers.json")
+
+	var aventuriersData backend.AventuriersData
+	json.Unmarshal(data, &aventuriersData)
+
+	index := -1
+	for i, aventurier := range aventuriersData.Aventuriers {
+		if aventurier.ID == id {
+			index = i
+			break
+		}
+	}
+
+	aventuriersData.Aventuriers[index].Nom = r.PostFormValue("nom")
+	aventuriersData.Aventuriers[index].Prenom = r.PostFormValue("prenom")
+	aventuriersData.Aventuriers[index].Surnom = r.PostFormValue("surnom")
+	aventuriersData.Aventuriers[index].Age, _ = strconv.Atoi(r.PostFormValue("age"))
+	aventuriersData.Aventuriers[index].Tribu = r.PostFormValue("tribu")
+	aventuriersData.Aventuriers[index].Sexe = r.PostFormValue("sexe")
+	aventuriersData.Aventuriers[index].Force, _ = strconv.Atoi(r.PostFormValue("force"))
+	aventuriersData.Aventuriers[index].Intelligence, _ = strconv.Atoi(r.PostFormValue("intelligence"))
+	aventuriersData.Aventuriers[index].Strategie, _ = strconv.Atoi(r.PostFormValue("strategie"))
+	aventuriersData.Aventuriers[index].Description = r.PostFormValue("description")
+
+	nouvellesDonneesJSON, _ := json.MarshalIndent(aventuriersData, "", "  ")
+
+	ioutil.WriteFile("aventuriers.json", nouvellesDonneesJSON, 0644)
+
+	http.Redirect(w, r, "/aventuriers", http.StatusSeeOther)
+}

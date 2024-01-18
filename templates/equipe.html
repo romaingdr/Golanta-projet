@@ -1,4 +1,4 @@
-{{define "aventuriers"}}
+{{define "equipe"}}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,14 @@
 <body>
 
 <div class="top">
-<a href="/accueil" class="bouton-retour">
-    <img src="/static/images/retour.png" alt="Retour" />
-</a>
+    <a href="/equipes" class="bouton-retour">
+        <img src="/static/images/retour.png" alt="Retour" />
+    </a>
 
-<h1>Liste des aventuriers</h1>
+    <h1>Liste de l'équipe</h1>
 </div>
 
-{{range .Aventuriers}}
+{{range .}}
 <div class="container">
     <div class="test">
         {{if eq .Sexe "homme"}}
@@ -51,9 +51,8 @@
     </div>
     <div class="details">
         <a href="/aventurier?id={{.ID}}" class="link-no-underline">
-        <p>{{.Nom}} "{{.Surnom}}" {{.Prenom}}, {{.Age}}</p>
+            <p>{{.Nom}} "{{.Surnom}}" {{.Prenom}}, {{.Age}}</p>
         </a>
-        <p>Equipe: {{.Tribu}}</p>
     </div>
     <a class="link" href="/edit?id={{.ID}}">
         <img src="/static/images/edit.png" alt="Modifier" />

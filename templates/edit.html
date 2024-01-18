@@ -1,0 +1,63 @@
+{{define "edit"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/create.css">
+</head>
+<body>
+
+<div class="top">
+    <a href="/aventuriers" class="bouton-retour">
+        <img src="/static/images/retour.png" alt="Retour" />
+    </a>
+
+    <h1>Modification d'un aventurier</h1>
+</div>
+<form action="/submit_edit" method="post">
+    <label for="nom">Nom :</label>
+    <input value="{{.Nom}}" type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input value="{{.Prenom}}" type="text" id="prenom" name="prenom" required>
+
+    <label for="surnom">Surnom :</label>
+    <input value="{{.Surnom}}" type="text" id="surnom" name="surnom">
+
+    <label for="age">Âge :</label>
+    <input value="{{.Age}}" type="number" id="age" name="age" required>
+
+
+    <label for="sexe">Sexe :</label>
+    <select id="sexe" name="sexe" required>
+        <option value="homme"{{if eq .Sexe "homme"}} selected{{end}}>Homme</option>
+        <option value="femme"{{if eq .Sexe "femme"}} selected{{end}}>Femme</option>
+    </select>
+
+    <label for="tribu">Equipe :</label>
+    <select id="tribu" name="tribu" required>
+        <option value="Rouge"{{if eq .Tribu "Rouge"}} selected{{end}}>Rouge</option>
+        <option value="Jaune"{{if eq .Tribu "Jaune"}} selected{{end}}>Jaune</option>
+        <option value="Bleu"{{if eq .Tribu "Bleu"}} selected{{end}}>Bleu</option>
+    </select>
+
+    <label for="force">Force physique (sur 10) :</label>
+    <input value="{{.Force}}" type="number" id="force" name="force" min="0" max="10">
+
+    <label for="intelligence">Intelligence (sur 10) :</label>
+    <input value="{{.Intelligence}}" type="number" id="intelligence" name="intelligence" min="0" max="10">
+
+    <label for="strategie">Stratégie (sur 10) :</label>
+    <input value="{{.Strategie}}" type="number" id="strategie" name="strategie" min="0" max="10">
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4">{{.Description}}</textarea>
+
+    <input type="hidden" id="id" name="id" value="{{.ID}}">
+
+    <button type="submit">Mettre à jour</button>
+</form>
+
+</body>
+</html>
+{{end}}

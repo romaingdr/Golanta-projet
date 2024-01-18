@@ -1,0 +1,30 @@
+{{define "equipes"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aventuriers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/equipes.css">
+</head>
+<body>
+
+<div class="top">
+    <a href="/accueil" class="bouton-retour">
+        <img src="/static/images/retour.png" alt="Retour" />
+    </a>
+
+    <h1>Liste des équipes</h1>
+</div>
+
+<div class="button-container">
+    <a href="/equipe?id=Rouge" class="button">Equipe rouge</a>
+</div>
+<div class="button-container">
+    <a href="/equipe?id=Bleu" class="button">Equipe bleue</a>
+</div>
+<div class="button-container">
+    <a href="/equipe?id=Jaune" class="button">Equipe jaune</a>
+</div>
+
+</body>
+</html>
+{{end}}

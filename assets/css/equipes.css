@@ -35,14 +35,14 @@ h1 {
 .container {
     border-radius: 10px;
     backdrop-filter: blur(10px); /* Applique un flou */
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond semi-transparente */
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-    overflow-y: auto;
-    max-height: 80vh;
+    overflow-y: auto; /* Active le défilement si nécessaire */
+    max-height: 80vh; /* Hauteur maximale pour déclencher le défilement */
 }
 .avatar {
     flex: 0 0 auto;
@@ -68,15 +68,29 @@ h1 {
     height: 120px;
 }
 
-.details p:first-child {
-    font-size: 30px;
-    font-family: 'kohlanta', sans-serif;
-}
-
-.details p:last-child {
-    color: black;
-}
 
 .link-no-underline {
     text-decoration: none;
+}
+
+
+a.button {
+    font-family: 'kohlanta', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 40px 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 40px;
+    display: inline-block;
+}
+
+a.button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
 }

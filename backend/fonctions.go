@@ -69,3 +69,26 @@ func SupprimerAventurierParID(id int, aventuriers *[]Aventurier) bool {
 
 	return true
 }
+
+func ChargerAventuriersParEquipe(cheminFichier string, equipe string) ([]Aventurier, error) {
+	data, err := ioutil.ReadFile(cheminFichier)
+	if err != nil {
+		return nil, err
+	}
+
+	var aventuriersData AventuriersData
+
+	err = json.Unmarshal(data, &aventuriersData)
+	if err != nil {
+		return nil, err
+	}
+
+	var aventuriersEquipe []Aventurier
+	for _, aventurier := range aventuriersData.Aventuriers {
+		if aventurier.Tribu == equipe {
+			aventuriersEquipe = append(aventuriersEquipe, aventurier)
+		}
+	}
+
+	return aventuriersEquipe, nil
+}

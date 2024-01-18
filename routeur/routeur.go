@@ -19,6 +19,10 @@ func Initserv() {
 	http.HandleFunc("/aventuriers", controller.AventuriersPage)
 	http.HandleFunc("/aventurier", controller.AventurierPage)
 	http.HandleFunc("/delete", controller.DeletePage)
+	http.HandleFunc("/equipes", controller.EquipesPage)
+	http.HandleFunc("/equipe", controller.EquipePage)
+	http.HandleFunc("/edit", controller.EditPage)
+	http.HandleFunc("/submit_edit", controller.SubmitEdit)
 
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
